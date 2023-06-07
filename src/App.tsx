@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { addCourse, getCourses, updateCourse, deleteCourse } from "./api";
+import "./App.css";
 
 interface Post {
   id: number;
@@ -67,43 +68,56 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1 className="bg-red-200">About Javascript libraries</h1>
+      <div className="container">
+        <h1 className="header">About Javascript libraries</h1>
         <input
+          className="search-input"
           type="text"
           placeholder="Search posts"
           value={searchTerm}
           onChange={handleSearchChange}
         />
         <input
+          className="title-input"
           type="text"
           placeholder="Enter title"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
+          className="description-input"
           type="text"
           placeholder="Enter description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button onClick={selectedPostId === null ? addPost : updatePost}>
+        <button
+          className={
+            selectedPostId === null ? "add-post-button" : "update-post-button"
+          }
+          onClick={selectedPostId === null ? addPost : updatePost}
+        >
           {selectedPostId === null ? "Add Post" : "Update Post"}
         </button>
         {filteredPosts.map((post) => (
-          <div key={post.id}>
+          <div key={post.id} className="post">
             <h2>{post.name}</h2>
             <p>{post.description}</p>
             <button
               onClick={() => editPost(post.id)}
-              className="btn btn-primary"
+              className="edit-post-button"
             >
               edit
             </button>
-            <button onClick={() => deletePost(post.id)}>delete</button>
+            <button
+              onClick={() => deletePost(post.id)}
+              className="delete-post-button"
+            >
+              delete
+            </button>
           </div>
-        ))}{" "}
-      </div>{" "}
+        ))}
+      </div>
     </>
   );
 }

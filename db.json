@@ -1,18 +1,13 @@
 {
   "posts": [
     {
-      "name": "hello ",
-      "description": "hello.ts",
+      "name": "react js",
+      "description": "this is about react js",
       "id": 1
     },
     {
-      "name": "juts another library ",
-      "description": "just another awesome libray",
-      "id": 2
-    },
-    {
-      "name": "type script ",
-      "description": "i love typescript",
+      "name": "Typescript",
+      "description": "this is about ts",
       "id": 3
     }
   ]
