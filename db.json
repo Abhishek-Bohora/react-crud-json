@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "name": "hello ",
+      "description": "hello.ts",
+      "id": 1
+    },
+    {
+      "name": "juts another library ",
+      "description": "just another awesome libray",
+      "id": 2
+    },
+    {
+      "name": "type script ",
+      "description": "i love typescript",
+      "id": 3
+    }
+  ]
+}
